@@ -43,8 +43,6 @@ function filepanel (appAPI, filesProvider) {
   var fileExplorer = new FileExplorer(appAPI, filesProvider['browser'])
   var fileSystemExplorer = new FileExplorer(appAPI, filesProvider['localhost'])
   var swarmExplorer = new FileExplorer(appAPI, filesProvider['swarm'])
-  var githubExplorer = new FileExplorer(appAPI, filesProvider['github'])
-  var gistExplorer = new FileExplorer(appAPI, filesProvider['gist'])
   var configExplorer = new FileExplorer(appAPI, filesProvider['config'])
 
   var dragbar = yo`<div onmousedown=${mousedown} class=${css.dragbar}></div>`
@@ -80,12 +78,6 @@ function filepanel (appAPI, filesProvider) {
                 </label>
               </span>
             ` : ''}
-            <span class="${css.gist}" title="Publish all [browser] explorer open files to an anonymous github gist" onclick=${() => publishToGist('browser')}>
-              <i class="fa fa-github"></i>
-            </span>
-            <span class="${css.gist}" title="Publish all [gist] explorer open files to an anonymous github gist" onclick=${() => publishToGist('gist')}>
-              <i class="fa fa-github"></i>
-            </span>
             <span class="${css.copyFiles}" title="Copy all files to another instance of Remix IDE" onclick=${copyFiles}>
               <i class="fa fa-files-o" aria-hidden="true"></i>
             </span>
@@ -98,8 +90,6 @@ function filepanel (appAPI, filesProvider) {
             <div class="configexplorer ${css.treeview}">${configExplorer.init()}</div>
             <div class="filesystemexplorer ${css.treeview}">${fileSystemExplorer.init()}</div>
             <div class="swarmexplorer ${css.treeview}">${swarmExplorer.init()}</div>
-            <div class="githubexplorer ${css.treeview}">${githubExplorer.init()}</div>
-            <div class="gistexplorer ${css.treeview}">${gistExplorer.init()}</div>
           </div>
         </div>
         ${dragbar}
@@ -149,14 +139,6 @@ function filepanel (appAPI, filesProvider) {
   })
 
   swarmExplorer.events.register('focus', function (path) {
-    appAPI.switchFile(path)
-  })
-
-  githubExplorer.events.register('focus', function (path) {
-    appAPI.switchFile(path)
-  })
-
-  gistExplorer.events.register('focus', function (path) {
     appAPI.switchFile(path)
   })
 
