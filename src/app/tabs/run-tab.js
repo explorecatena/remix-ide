@@ -399,17 +399,10 @@ function settings (container, appAPI, appEvents) {
               JavaScript VM
             </option>
             <option id="injected-mode"
-              title="Execution environment has been provided by Mist or similar provider."
+              title="Execution environment has been provided by Catena Blockchain Development Suite."
               value="injected"
               checked name="executionContext">
-              Injected Web3
-            </option>
-            <option id="web3-mode"
-              title="Execution environment connects to node at localhost (or via IPC if available), transactions will be sent to the network and can cause loss of money or worse!
-              If this page is served via https and you access your node via http, it might not work. In this case, try cloning the repository and serving it via http."
-              value="web3"
-              name="executionContext">
-              Web3 Provider
+              Catena
             </option>
           </select>
           <a href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-155.md" target="_blank"><i class="${css.icon} fa fa-info"></i></a>
