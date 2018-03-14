@@ -177,7 +177,6 @@ function compileTab (appAPI = {}, appEvents = {}, opts = {}) {
         <select class="${css.contractNames}" disabled></select>
         <div class="${css.contractButtons}">
           <div title="Display Contract Details" class="${css.details}" onclick=${() => { details() }}>Details</div>
-          <div title="Publish on Swarm" class="${css.publish}" onclick=${() => { publish(appAPI) }}>Publish on Swarm</div>
         </div>
       </div>
     `

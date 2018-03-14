@@ -405,14 +405,12 @@ function settings (container, appAPI, appEvents) {
               Catena
             </option>
           </select>
-          <a href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-155.md" target="_blank"><i class="${css.icon} fa fa-info"></i></a>
         </div>
       </div>
       <div class="${css.crow}">
         <div class="${css.col1_1}">Account</div>
         <select name="txorigin" class="${css.select}" id="txorigin"></select>
           ${copyToClipboard(() => document.querySelector('#runTabView #txorigin').value)}
-          <i class="fa fa-plus-circle ${css.icon}" aria-hidden="true" onclick=${newAccount} title="Create a new account"></i>
       </div>
       <div class="${css.crow}">
         <div class="${css.col1_1}">Gas limit</div>
