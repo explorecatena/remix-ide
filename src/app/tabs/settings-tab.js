@@ -232,7 +232,7 @@ function loadVersion (version, queryParams, appAPI, el) {
   var url
   if (version === 'builtin') {
     var location = window.document.location
-    location = location.protocol + '//' + location.host + '/' + location.pathname
+    location = location.protocol + '//' + location.host + location.pathname
     if (location.endsWith('index.html')) {
       location = location.substring(0, location.length - 10)
     }
